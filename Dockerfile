@@ -6,15 +6,15 @@ RUN curl https://minecraft.azureedge.net/bin-linux/bedrock-server-1.8.0.24.zip -
 	&& rm bedrock-server.zip \
 	&& chmod 755 /bedrock-server/bedrock_server
 
-EXPOSE 19132
+EXPOSE 19132/udp
+RUN mkdir -p /bedrock-server/orig-config \
+	&& /bin/cp /bedrock-server/*.json /bedrock-server/orig-config/ \
+	&& /bin/cp /bedrock-server/*.properties /bedrock-server/orig-config/
 
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 VOLUME /worlds
 VOLUME /config
 RUN /bin/rm -rf /bedrock-server/worlds && /bin/ln -s /worlds /bedrock-server/worlds
-RUN /bin/mv -f /bedrock-server/server.properties /bedrock-server/server.properties.old
-RUN /bin/cp -f /bedrock-server/server.properties.old /config/server.properties
-RUN ln -s /config/server.properties /bedrock-server/server.properties
 WORKDIR /bedrock-server
 CMD /run.sh
