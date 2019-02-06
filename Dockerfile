@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update && apt-get install -y unzip curl libcurl4 libssl1.0.0
-RUN curl https://minecraft.azureedge.net/bin-linux/bedrock-server-1.8.0.24.zip --output /bedrock-server.zip \
+RUN curl https://minecraft.azureedge.net/bin-linux/bedrock-server-1.9.0.15.zip --output /bedrock-server.zip \
 	&& unzip bedrock-server.zip -d bedrock-server \
 	&& rm bedrock-server.zip \
 	&& chmod 755 /bedrock-server/bedrock_server
