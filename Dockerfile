@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ENV BEDROCK_SERVER_VERSION=1.19.20.02
+ENV BEDROCK_SERVER_VERSION=1.19.21.01
 RUN apt-get update && apt-get install -y unzip curl libcurl4 libssl1.0.0
 RUN curl https://minecraft.azureedge.net/bin-linux/bedrock-server-$BEDROCK_SERVER_VERSION.zip --output /bedrock-server.zip \
 	&& unzip bedrock-server.zip -d bedrock-server \
