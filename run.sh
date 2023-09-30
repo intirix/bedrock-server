@@ -25,5 +25,5 @@ then
 	/bin/ln -s /config/whitelist.json /bedrock-server/allowlist.json
 fi
 
-export LD_LIBRARY_PATH=/bedrock-server
+#export LD_LIBRARY_PATH=/bedrock-server
 exec /bedrock-server/bedrock_server
