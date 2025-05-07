@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-ENV BEDROCK_SERVER_VERSION=1.21.73.01
+ENV BEDROCK_SERVER_VERSION=1.21.80.3
 RUN apt-get update && apt-get upgrade -y && apt-get install -y unzip curl libcurl4
 RUN   curl https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-$BEDROCK_SERVER_VERSION.zip \
   -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
